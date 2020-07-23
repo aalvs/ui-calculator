@@ -1,11 +1,14 @@
 
 package calculadoraapp;
 
+import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 /**
  *
@@ -27,7 +30,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        JPanelBG = new javax.swing.JPanel();
         txtOperacao = new javax.swing.JLabel();
         txtResultado = new javax.swing.JLabel();
         jButtonMultiplicar = new javax.swing.JButton();
@@ -56,17 +59,18 @@ public class CalculadoraApp extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPanelBG.setBackground(new java.awt.Color(255, 255, 255));
+        JPanelBG.setMinimumSize(new java.awt.Dimension(3, 596));
+        JPanelBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtOperacao.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         txtOperacao.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtOperacao.setText(" ");
-        jPanel2.add(txtOperacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 76, 320, -1));
+        JPanelBG.add(txtOperacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 76, 320, -1));
 
         txtResultado.setFont(new java.awt.Font("Roboto", 1, 40)); // NOI18N
         txtResultado.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jPanel2.add(txtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 104, 320, 57));
+        JPanelBG.add(txtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 104, 320, 57));
 
         jButtonMultiplicar.setBackground(new java.awt.Color(255, 255, 255));
         jButtonMultiplicar.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -83,7 +87,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButtonMultiplicarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonMultiplicar, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 275, 66, 66));
+        JPanelBG.add(jButtonMultiplicar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 275, 66, 66));
 
         jButton0.setBackground(new java.awt.Color(255, 255, 255));
         jButton0.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -100,7 +104,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButton0ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton0, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 150, 66));
+        JPanelBG.add(jButton0, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 146, 66));
 
         jButton8.setBackground(new java.awt.Color(255, 255, 255));
         jButton8.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -117,7 +121,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 275, 66, 66));
+        JPanelBG.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 275, 66, 66));
 
         jButton9.setBackground(new java.awt.Color(255, 255, 255));
         jButton9.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -134,7 +138,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 275, 66, 66));
+        JPanelBG.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 275, 66, 66));
 
         jButton7.setBackground(new java.awt.Color(255, 255, 255));
         jButton7.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -151,10 +155,10 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 275, 66, 66));
+        JPanelBG.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 275, 66, 66));
 
         jButtonCancelar.setBackground(new java.awt.Color(255, 255, 255));
-        jButtonCancelar.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jButtonCancelar.setFont(new java.awt.Font("Roboto", 1, 26)); // NOI18N
         jButtonCancelar.setForeground(new java.awt.Color(146, 118, 240));
         jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnDefault.png"))); // NOI18N
         jButtonCancelar.setText("C");
@@ -168,7 +172,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButtonCancelarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 66, 66));
+        JPanelBG.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 66, 66));
 
         jButtonDeletar.setBackground(new java.awt.Color(255, 255, 255));
         jButtonDeletar.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
@@ -185,7 +189,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButtonDeletarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 190, 66, 66));
+        JPanelBG.add(jButtonDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 66, 66));
 
         jButtonPorcentagem.setBackground(new java.awt.Color(255, 255, 255));
         jButtonPorcentagem.setFont(new java.awt.Font("Roboto", 1, 28)); // NOI18N
@@ -202,7 +206,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButtonPorcentagemActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonPorcentagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 66, 66));
+        JPanelBG.add(jButtonPorcentagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 66, 66));
 
         jButtonDividir.setBackground(new java.awt.Color(255, 255, 255));
         jButtonDividir.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -219,7 +223,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButtonDividirActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonDividir, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 190, 66, 66));
+        JPanelBG.add(jButtonDividir, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 66, 66));
 
         jButtonSomar.setBackground(new java.awt.Color(255, 255, 255));
         jButtonSomar.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -236,7 +240,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButtonSomarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonSomar, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 360, 66, 66));
+        JPanelBG.add(jButtonSomar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 66, 66));
 
         jButton6.setBackground(new java.awt.Color(255, 255, 255));
         jButton6.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -253,7 +257,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 66, 66));
+        JPanelBG.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 66, 66));
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
         jButton5.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -270,7 +274,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 360, 66, 66));
+        JPanelBG.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 66, 66));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -287,7 +291,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 66, 66));
+        JPanelBG.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 66, 66));
 
         jButtonSubtrair.setBackground(new java.awt.Color(255, 255, 255));
         jButtonSubtrair.setFont(new java.awt.Font("Roboto", 0, 48)); // NOI18N
@@ -304,7 +308,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButtonSubtrairActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonSubtrair, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 445, 66, 66));
+        JPanelBG.add(jButtonSubtrair, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 445, 66, 66));
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -321,7 +325,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 445, 66, 66));
+        JPanelBG.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 445, 66, 66));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -338,7 +342,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 445, 66, 66));
+        JPanelBG.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 445, 66, 66));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -355,7 +359,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 445, 66, 66));
+        JPanelBG.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 445, 66, 66));
 
         jButtonPonto.setBackground(new java.awt.Color(255, 255, 255));
         jButtonPonto.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -372,7 +376,7 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButtonPontoActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonPonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 66, 66));
+        JPanelBG.add(jButtonPonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 66, 66));
 
         jButtonTotalizar.setBackground(new java.awt.Color(255, 255, 255));
         jButtonTotalizar.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
@@ -388,23 +392,23 @@ public class CalculadoraApp extends javax.swing.JFrame {
                 jButtonTotalizarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonTotalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 530, 66, 66));
+        JPanelBG.add(jButtonTotalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 530, 66, 66));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(JPanelBG, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(0, 0, 0)
+                .addComponent(JPanelBG, javax.swing.GroupLayout.DEFAULT_SIZE, 628, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -421,76 +425,72 @@ public class CalculadoraApp extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultiplicarActionPerformed
-        addNumber("*");
-    }//GEN-LAST:event_jButtonMultiplicarActionPerformed
+    private void jButtonTotalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTotalizarActionPerformed
+        try {
+            String resultado = se.eval(txtOperacao.getText()).toString();
+            txtResultado.setText(resultado);
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        addNumber("9");
+        } catch (ScriptException ex) {
+            //txtOperacao.setText("ERRO");
+        }
+
+    }//GEN-LAST:event_jButtonTotalizarActionPerformed
+
+    private void jButtonPontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPontoActionPerformed
+        addNumber(".");
+    }//GEN-LAST:event_jButtonPontoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        addNumber("1");
         jButtonTotalizar.doClick();
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton0ActionPerformed
-        addNumber("0");
-        jButtonTotalizar.doClick();
-    }//GEN-LAST:event_jButton0ActionPerformed
-
-    private void jButtonPorcentagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPorcentagemActionPerformed
-        addNumber("%");
-    }//GEN-LAST:event_jButtonPorcentagemActionPerformed
-
-    private void jButtonDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDividirActionPerformed
-        addNumber("/");
-    }//GEN-LAST:event_jButtonDividirActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        addNumber("8");
-        jButtonTotalizar.doClick();
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButtonSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSomarActionPerformed
-        addNumber("+");
-    }//GEN-LAST:event_jButtonSomarActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        addNumber("6");
-        jButtonTotalizar.doClick();
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        addNumber("5");
-        jButtonTotalizar.doClick();
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButtonSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubtrairActionPerformed
-        addNumber("-");
-    }//GEN-LAST:event_jButtonSubtrairActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        addNumber("3");
-        jButtonTotalizar.doClick();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         addNumber("2");
         jButtonTotalizar.doClick();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButtonPontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPontoActionPerformed
-        addNumber(".");
-    }//GEN-LAST:event_jButtonPontoActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        addNumber("3");
+        jButtonTotalizar.doClick();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButtonTotalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTotalizarActionPerformed
-        try {
-            String resultado = se.eval(txtOperacao.getText()).toString();
-            txtResultado.setText(resultado);  
-            
-        } catch (ScriptException ex) {
-            //txtOperacao.setText("ERRO");
-        }
-        
-        
-    }//GEN-LAST:event_jButtonTotalizarActionPerformed
+    private void jButtonSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubtrairActionPerformed
+        addNumber("-");
+    }//GEN-LAST:event_jButtonSubtrairActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        addNumber("4");
+        jButtonTotalizar.doClick();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        addNumber("5");
+        jButtonTotalizar.doClick();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        addNumber("6");
+        jButtonTotalizar.doClick();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButtonSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSomarActionPerformed
+        addNumber("+");
+    }//GEN-LAST:event_jButtonSomarActionPerformed
+
+    private void jButtonDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDividirActionPerformed
+        addNumber("/");
+    }//GEN-LAST:event_jButtonDividirActionPerformed
+
+    private void jButtonPorcentagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPorcentagemActionPerformed
+        addNumber("%");
+    }//GEN-LAST:event_jButtonPorcentagemActionPerformed
+
+    private void jButtonDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletarActionPerformed
+        String texto = txtOperacao.getText() .substring(0,txtOperacao.getText().length()-1);
+        txtOperacao.setText(texto);
+        jButtonTotalizar.doClick();
+    }//GEN-LAST:event_jButtonDeletarActionPerformed
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
         txtOperacao.setText("");
@@ -502,21 +502,24 @@ public class CalculadoraApp extends javax.swing.JFrame {
         jButtonTotalizar.doClick();
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        addNumber("1");
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        addNumber("9");
         jButtonTotalizar.doClick();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jButtonDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeletarActionPerformed
-        String texto = txtOperacao.getText() .substring(0,txtOperacao.getText().length()-1);
-        txtOperacao.setText(texto);
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        addNumber("8");
         jButtonTotalizar.doClick();
-    }//GEN-LAST:event_jButtonDeletarActionPerformed
+    }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        addNumber("4");
+    private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton0ActionPerformed
+        addNumber("0");
         jButtonTotalizar.doClick();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_jButton0ActionPerformed
+
+    private void jButtonMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultiplicarActionPerformed
+        addNumber("*");
+    }//GEN-LAST:event_jButtonMultiplicarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -554,11 +557,33 @@ public class CalculadoraApp extends javax.swing.JFrame {
         });
     }
     
+    
+    public void hoverColor0 (JButton btn) {
+        btn.setIcon(new ImageIcon(getClass().getResource("/img/btnDark3.png")));
+        btn.setRolloverIcon(new ImageIcon(getClass().getResource("/img/btnDarkHover3.png")));
+        btn.setForeground(Color.decode("#ffffff"));
+        
+    }
+    
+    public void hoverColor1 (JButton btn) {
+        btn.setIcon(new ImageIcon(getClass().getResource("/img/btnDark1.png")));
+        btn.setRolloverIcon(new ImageIcon(getClass().getResource("/img/btnDarkHover1.png")));
+        
+    }
+    
+    public void hoverColor2 (JButton btn) {
+        btn.setIcon(new ImageIcon(getClass().getResource("/img/btnDark2.png")));
+        btn.setRolloverIcon(new ImageIcon(getClass().getResource("/img/btnDarkHover2.png")));
+        btn.setForeground(Color.decode("#ffffff"));
+        
+    }
+    
     public void addNumber(String digito) {
         txtOperacao.setText(txtOperacao.getText()+digito);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel JPanelBG;
     private javax.swing.JButton jButton0;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -579,7 +604,6 @@ public class CalculadoraApp extends javax.swing.JFrame {
     private javax.swing.JButton jButtonSubtrair;
     private javax.swing.JButton jButtonTotalizar;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel txtOperacao;
     private javax.swing.JLabel txtResultado;
     // End of variables declaration//GEN-END:variables
